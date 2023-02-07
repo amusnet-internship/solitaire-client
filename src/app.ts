@@ -6,7 +6,7 @@ const initForm = document.querySelector('form');
 const initSection = document.getElementById('init');
 const gameSection = document.getElementById('game');
 
-let connection = null;
+let connection: Connection = null;
 
 initForm.addEventListener('submit', async event => {
     event.preventDefault();
@@ -23,6 +23,13 @@ initForm.addEventListener('submit', async event => {
 document.getElementById('disconnect').addEventListener('click', () => {
     connection?.disconnect();
     showInit();
+});
+
+document.getElementById('restart').addEventListener('click', () => {
+    const choice = confirm('Are you sure?');
+    if (choice) {
+        connection?.send('newGame');
+    }
 });
 
 function showBoard() {

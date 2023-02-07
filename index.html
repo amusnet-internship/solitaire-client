@@ -15,6 +15,88 @@
         #game {
             display: none;
         }
+
+        .stock, .foundation, .pile {
+            display: inline-block;
+        }
+
+        .stock {
+            height: 150px;
+        }
+
+        .foundation {
+            margin-left: 60px;
+        }
+
+        .stack {
+            border: 1px solid black;
+            margin: 2px;
+            padding: 2px;
+            display: inline-block;
+            vertical-align: top;
+            width: 56px;
+            min-height: 81px;
+        }
+
+        .card {
+            display: block;
+            width: 50px;
+            height: 25px;
+            background-color: antiquewhite;
+            border: 1px solid black;
+            border-bottom: none;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            cursor: default;
+            user-select: none;
+        }
+
+        .placeholder {
+            display: block;
+            width: 50px;
+            height: 25px;
+            border: 1px solid black;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            cursor: default;
+            user-select: none;
+        }
+
+        .top {
+            height: 75px;
+            border-bottom: 1px solid black;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 70px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .face-down {
+            background-color: burlywood;
+        }
+        
+        .black {
+            color: black;
+        }
+
+        .valid:hover {
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+
+        .stock .card:not(.top), .foundation .card:not(.top) {
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .base {
+            background-color: azure;
+        }
     </style>
 </head>
 
@@ -30,6 +112,7 @@
     <section id="game">
         <h2>Game</h2>
         <button id="disconnect">Disconnect</button>
+        <button id="restart">Restart</button>
         <div id="action"></div>
         <div id="board"></div>
     </section>
